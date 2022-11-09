@@ -1,0 +1,23 @@
+*{padding: 0%;
+    margin: 0%;
+
+}
+#boxes img {
+    height: 200px;
+    width: auto;
+    border: 5px solid #000000;
+    box-shadow: 2px 2px#000000;
+    display: inline-flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+#boxes audio {
+    height: 20px;
+    width: 276.66px;
+    border: 5px solid #000000;
+    box-shadow: 2px 2px#000000;
+    background-color: #f1f3f4;
+    margin : 5px;
+}
+
+
