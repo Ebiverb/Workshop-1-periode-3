@@ -13,12 +13,17 @@
     height: 100px;
     margin: 15px;
     margin-left: 639px;
+    font-size: x-large;
+}
+.flex-container button b {
+    background-color: #000000;
 }
 
 .flex-container img {
-    border: 5px solid #e9e0c9;
-    box-shadow: 2px 2px #e9e0c9;
     margin: 15px;
     float: left;
     margin-left: 30px;
+    object-fit: cover;
+    border: 5px solid #e9e0c9;
+    box-shadow: 2px 2px #e9e0c9;
 }
