@@ -1,23 +1,24 @@
-*{padding: 0%;
+* {
+    padding: 0%;
     margin: 0%;
-
-}
-#boxes img {
-    height: 200px;
-    width: auto;
-    border: 5px solid #000000;
-    box-shadow: 2px 2px#000000;
-    display: inline-flex;
-    justify-content: space-around;
-    margin: 5px;
-}
-#boxes audio {
-    height: 20px;
-    width: 276.66px;
-    border: 5px solid #000000;
-    box-shadow: 2px 2px#000000;
-    background-color: #f1f3f4;
-    margin : 5px;
+    background-color:#42855B;
 }
 
+.flex-container button {
+    color: #e9e0c9;
+    background-color: #000000;
+    border: 5px solid #e9e0c9;
+    box-shadow: 2px 2px #e9e0c9;
+    width: 260px;
+    height: 100px;
+    margin: 15px;
+    margin-left: 639px;
+}
 
+.flex-container img {
+    border: 5px solid #e9e0c9;
+    box-shadow: 2px 2px #e9e0c9;
+    margin: 15px;
+    float: left;
+    margin-left: 30px;
+}

@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Spotify Web Player</title>
+    <title>Document</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
 </head>
-
 <body>
-    <div id="boxes">
-        <img src="assets/images/2tW2zf7n8wwwWXZO9dAQMVu5 (convert.io).png">
-        <img src="assets/images/w48z6bzefZPrRcJHc7L8SO66.png">
-        <img src="assets/images/capsule_616x353.png">
-        <img src="assets/images/6160d683871f057c80eeb43e-detroit-become-human-400.png">
-        <img src="assets/images/ghost-of-tsushima-pc-spel-cover.png">
-        <audio src="assets/audio/Cyberpunk 2077 music.mp3" controls></audio>    
-        <audio src="assets/audio/The Last of Us 2 - Main Theme.mp3" controls></audio>
-        <audio src="assets/audio/(Louder) Aloys Theme - Horizon Zero Dawn - (Extended) Main Menu Theme.mp3"controls></audio>
-        <audio src="assets/audio/Opening Credits (Unused Full Theme)  Detroit Become Human Unreleased OST.mp3"controls></audio>
-        <audio src="assets/audio/Ghost of Tsushima OST - Main Theme (The Way of the Ghost).mp3" controls></audio>
-    </div>
-</body>
+    <div class="flex-container">
+        <div><button onclick="next();">Next</button></div>
+        <div><img src="assets/images/2tW2zf7n8wwwWXZO9dAQMVu5 (convert.io).png" width="250" height="250" id="plaatje1"></div>
+        <div><img src="assets/images/6160d683871f057c80eeb43e-detroit-become-human-400.png" width="250" height="250" id="plaatje2"></div>
+        <div style="background-color:red;"><img src="assets/images/capsule_616x353.png" width="250" height="250" id="plaatje3"></div>  
+        <div><img src="assets/images/ghost-of-tsushima-pc-spel-cover.png" width="250" height="250" id="plaatje4"></div>  
+        <div><img src="/assets/images/w48z6bzefZPrRcJHc7L8SO66.png" width="250" height="250" id="plaatje5"></div>  
+        <div><button onclick="previous();">Previous</button></div>
+    </div>  
 
+    <script>
+        function next() {
+            console.log('next');
+
+            
+            var src1 = document.getElementById('plaatje1').src;
+            var src2 = document.getElementById('plaatje2').src;
+            var src3 = document.getElementById('plaatje3').src;
+            var src4 = document.getElementById('plaatje4').src;
+            var src5 = document.getElementById('plaatje5').src;
+
+            document.getElementById('plaatje1').src = src5; 
+            document.getElementById('plaatje2').src = src1;
+            document.getElementById('plaatje3').src = src2;
+            document.getElementById('plaatje4').src = src3;
+            document.getElementById('plaatje5').src = src4;
+        }
+            
+        
+        function previous() {
+            console.log('previous');
+
+            var src1 = document.getElementById('plaatje5').src;
+            var src2 = document.getElementById('plaatje4').src;
+            var src3 = document.getElementById('plaatje3').src;
+            var src4 = document.getElementById('plaatje2').src;
+            var src5 = document.getElementById('plaatje1').src;
+
+            document.getElementById('plaatje5').src = src5; 
+            document.getElementById('plaatje4').src = src1;
+            document.getElementById('plaatje3').src = src2;
+            document.getElementById('plaatje2').src = src3;
+            document.getElementById('plaatje1').src = src4;
+        }
+
+    </script>     
+</body>
 </html>
