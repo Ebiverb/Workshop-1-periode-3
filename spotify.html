@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,52 +8,109 @@
     <title>Document</title>
     <link href="assets/css/style.css" rel="stylesheet" />
 </head>
+
 <body>
     <div class="flex-container">
         <div><button onclick="next();"><b>Next</b></button></div>
-        <div><img src="assets/images/2tW2zf7n8wwwWXZO9dAQMVu5 (convert.io).png" width="250" height="250" id="plaatje1"></div>
-        <div><img src="assets/images/6160d683871f057c80eeb43e-detroit-become-human-400.png" width="250" height="250" id="plaatje2"></div>
-        <div style="background-color:red;"><img src="assets/images/capsule_616x353.png" width="250" height="250" id="plaatje3"></div>  
-        <div><img src="assets/images/ghost-of-tsushima-pc-spel-cover.png" width="250" height="250" id="plaatje4"></div>  
-        <div><img src="/assets/images/w48z6bzefZPrRcJHc7L8SO66.png" width="250" height="250" id="plaatje5"></div>  
+        <div><img data-song-id="cyberpunk2077" src="assets/images/2tW2zf7n8wwwWXZO9dAQMVu5 (convert.io).png" width="250"
+                height="250" id="plaatje1"></div>
+        <div><img data-song-id="Detroit" src="assets/images/6160d683871f057c80eeb43e-detroit-become-human-400.png"
+                width="250" height="250" id="plaatje2"></div>
+        <div style="background-color:red;"> <img data-song-id="Horizon" src="assets/images/capsule_616x353.png"
+                width="250" height="250" id="plaatje3"></div>
+        <div><img data-song-id="ghost-of-tsushima" src="assets/images/ghost-of-tsushima-pc-spel-cover.png" width="250"
+                height="250" id="plaatje4"></div>
+        <div><img data-song-id="lastofus" src="/assets/images/w48z6bzefZPrRcJHc7L8SO66.png" width="250" height="250"
+                id="plaatje5"></div>
         <div><button onclick="previous();"><b>Previous</b></button></div>
-    </div>  
+    </div>
 
+    <audio id="cyberpunk2077">
+        <source src="assets/audio/Cyberpunk 2077 music.ogg" type="audio/ogg">
+        <source src="assets/audio/Cyberpunk 2077 music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="Detroit">
+        <source src="assets/audio/Opening Credits (Unused Full Theme) Detroit Become Human Unreleased OST.ogg" type="audio/ogg">
+        <source src="assets/audio/Opening Credits (Unused Full Theme)  Detroit Become Human Unreleased OST.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="Horizon">
+        <source src="assets/audio/(Louder) Aloys Theme - Horizon Zero Dawn - (Extended) Main Menu Theme.ogg" type="audio/ogg">
+        <source src="assets/audio/(Louder) Aloys Theme - Horizon Zero Dawn - (Extended) Main Menu Theme.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="ghost-of-tsushima">
+        <source src="assets/audio/Ghost of Tsushima OST - Main Theme (The Way of the Ghost).ogg" type="audio/ogg">
+        <source src="assets/audio/Ghost of Tsushima OST - Main Theme (The Way of the Ghost).mp3" type="audio/mpeg">
+    </audio>
+    <audio id="lastofus">
+        <source src="assets/audio/The Last of Us 2 - Main Theme.ogg" type="audio/ogg">
+        <source src="assets/audio/The Last of Us 2 - Main Theme.mp3" type="audio/mpeg">
+    </audio>
     <script>
+
+        function previous() {
+            console.log('previous');
+
+            var src5 = document.getElementById('plaatje5').src;
+            var src4 = document.getElementById('plaatje4').src;
+            var src3 = document.getElementById('plaatje3').src;
+            var src2 = document.getElementById('plaatje2').src;
+            var src1 = document.getElementById('plaatje1').src;
+
+            document.getElementById('plaatje5').src = src4;
+            document.getElementById('plaatje4').src = src3;
+            document.getElementById('plaatje3').src = src2;
+            document.getElementById('plaatje2').src = src1;
+            document.getElementById('plaatje1').src = src5;
+        }
+
         function next() {
             console.log('next');
 
-            
+
             var src1 = document.getElementById('plaatje1').src;
             var src2 = document.getElementById('plaatje2').src;
             var src3 = document.getElementById('plaatje3').src;
             var src4 = document.getElementById('plaatje4').src;
             var src5 = document.getElementById('plaatje5').src;
 
-            document.getElementById('plaatje1').src = src5; 
+            document.getElementById('plaatje1').src = src5;
             document.getElementById('plaatje2').src = src1;
             document.getElementById('plaatje3').src = src2;
             document.getElementById('plaatje4').src = src3;
             document.getElementById('plaatje5').src = src4;
+
+            var dsi1 = document.getElementById('plaatje1').getAttribute('data-song-id');
+            var dsi2 = document.getElementById('plaatje2').getAttribute('data-song-id');
+            var dsi3 = document.getElementById('plaatje3').getAttribute('data-song-id');
+            var dsi4 = document.getElementById('plaatje4').getAttribute('data-song-id');
+            var dsi5 = document.getElementById('plaatje5').getAttribute('data-song-id');
+
+            document.getElementById('plaatje1').setAttribute('data-song-id', dsi5); 
+            document.getElementById('plaatje2').setAttribute('data-song-id', dsi1); 
+            document.getElementById('plaatje3').setAttribute('data-song-id', dsi2); 
+            document.getElementById('plaatje4').setAttribute('data-song-id', dsi3); 
+            document.getElementById('plaatje5').setAttribute('data-song-id', dsi4); 
+
+            var nummer3 = document.getElementById('plaatje3');            
+            var songId  = nummer3.getAttribute('data-song-id');
+
+            playSong(songId);
+        }       	            
+
+        function playSong(songId) {
+            console.log('playSong ' + songId);
+            document.getElementById(songId).play();
         }
-            
         
-        function previous() {
-            console.log('previous');
+    </script>
+    <div id="content">
+        <h1>Songs :</h1>
+        <p>1. Cyberpunk2077 Theme song 5:46</p>
+        <p>2. Detroit become human Theme song 3:26</p>
+        <p>3. Horizon zero dawn Aloy's Theme 8:53</p>
+        <p>4. Ghost of tsushima Theme song 4:15</p>
+        <p>5. The last of us 2 Theme song 2:52</p>
+    </div>
 
-            var src1 = document.getElementById('plaatje5').src;
-            var src2 = document.getElementById('plaatje4').src;
-            var src3 = document.getElementById('plaatje3').src;
-            var src4 = document.getElementById('plaatje2').src;
-            var src5 = document.getElementById('plaatje1').src;
-
-            document.getElementById('plaatje5').src = src5; 
-            document.getElementById('plaatje4').src = src1;
-            document.getElementById('plaatje3').src = src2;
-            document.getElementById('plaatje2').src = src3;
-            document.getElementById('plaatje1').src = src4;
-        }
-
-    </script>     
 </body>
 </html>
